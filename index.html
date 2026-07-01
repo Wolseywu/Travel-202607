@@ -39,31 +39,38 @@
   *{box-sizing:border-box}
   body{
     margin:0;
-    background:
-      linear-gradient(180deg, rgba(61,90,115,0.08), transparent 260px),
-      var(--bg);
+    background-color:#e7d9bb;
+    background-image:
+      radial-gradient(120% 95% at 50% 38%, rgba(255,250,236,0.45), rgba(255,250,236,0) 66%),
+      radial-gradient(60% 55% at 28% 22%, rgba(150,118,74,0.12), transparent 60%),
+      radial-gradient(55% 60% at 82% 30%, rgba(130,100,60,0.10), transparent 58%),
+      radial-gradient(70% 65% at 68% 86%, rgba(110,82,44,0.12), transparent 60%),
+      radial-gradient(50% 50% at 12% 78%, rgba(140,110,68,0.10), transparent 55%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+    background-size:auto,auto,auto,auto,auto,140px 140px;
+    background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+    background-attachment:fixed,fixed,fixed,fixed,fixed,fixed;
     color:var(--ink);
     font-family:var(--sans);
     line-height:1.6;
   }
   .wrap{max-width:1040px;margin:0 auto;padding:44px 24px 80px}
 
-  header.page-head{margin-bottom:24px;border-bottom:1px solid var(--line);padding-bottom:26px}
+  header.page-head{margin-bottom:20px}
   h1{
-    font-family:var(--serif);font-weight:600;font-size:clamp(28px,5vw,40px);
+    font-family:var(--sans);font-weight:600;font-size:clamp(20px,4vw,32px);
     margin:0;color:var(--ink);letter-spacing:0.01em;
   }
 
   .legend{
-    display:flex;flex-wrap:wrap;gap:16px 22px;margin:26px 0 0;padding:0;list-style:none;
+    display:flex;flex-wrap:wrap;gap:16px 22px;margin:0 0 20px;padding:0;list-style:none;
     font-family:var(--mono);font-size:11px;color:var(--ink-soft);
   }
   .legend li{display:flex;align-items:center;gap:7px}
   .legend .dot{width:9px;height:9px;border-radius:1px;display:inline-block}
 
   .tools{
-    margin:0 0 24px;padding:12px 0;
-    border-bottom:1px solid var(--line);
+    margin:0 0 20px;
   }
   .tools-panel{display:block;width:100%}
   .country-filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-start}
@@ -87,7 +94,7 @@
   .country-row{
     display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
     font-family:var(--sans);font-weight:600;font-size:14px;color:var(--gold);
-    margin:40px 0 10px;padding:0 4px;
+    margin:0 0 12px;padding:0 4px;
   }
   .country-row span{
     text-align:center;
@@ -247,6 +254,7 @@
 
   @media (max-width:680px){
     .wrap{padding:28px 16px 64px}
+    .legend{row-gap:8px}
     .country-filters{justify-content:flex-start}
     .country-row{display:none}
     .entry-row{grid-template-columns:1fr}
@@ -262,23 +270,54 @@
       max-width:34%;white-space:normal;line-height:1.4;margin-left:auto;
     }
   }
+  /* ===== 分頁切換 ===== */
+  .view-tabs{display:flex;gap:4px;margin:0 0 20px;border-bottom:1px solid var(--line)}
+  .view-tab{
+    border:none;background:none;cursor:pointer;
+    font:600 15px var(--sans);color:var(--ink-soft);
+    padding:11px 8px;margin-bottom:-1px;border-bottom:2px solid transparent;
+    transition:color 0.15s ease, border-color 0.15s ease;
+  }
+  .view-tab:hover{color:var(--ink)}
+  .view-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+  .view.is-hidden{display:none}
+
+  /* ===== 建築風格分頁 ===== */
+  /* ===== 建築風格 · 時間軸樣式 ===== */
+  .arch-timeline{list-style:none;margin:0 0 22px;padding:0}
+  .arch-tl{position:relative;padding:0 0 30px 30px;border-left:2px solid var(--line)}
+  .arch-tl:last-child{padding-bottom:4px}
+  .arch-tl::before{
+    content:"";position:absolute;left:-8px;top:11px;width:13px;height:13px;border-radius:50%;
+    background:var(--gold);box-shadow:0 0 0 4px #ece2c8;
+  }
+  .arch-tl-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:0 0 9px}
+  .arch-tl-era{
+    font-family:var(--mono);font-size:11px;letter-spacing:0.03em;color:var(--text-on-color);
+    background:var(--gold);border-radius:2px;padding:3px 9px;white-space:nowrap;
+  }
+  .arch-tl-name{font-family:var(--sans);font-weight:600;font-size:16px;color:var(--ink)}
+  .arch-tl-en{font-family:var(--mono);font-size:11px;letter-spacing:0.04em;color:var(--gold-dim)}
+  .arch-tl-desc{font-size:13.5px;line-height:1.8;color:var(--ink-soft);margin:0 0 12px;max-width:640px}
+  .arch-tl-figure{margin:0 0 12px;border:1px solid rgba(43,36,25,0.12);border-radius:8px;overflow:hidden;max-width:460px;box-shadow:var(--shadow)}
+  .arch-tl-figure img{display:block;width:100%;height:auto}
+  .arch-tl-rep{font-size:12.5px;line-height:1.65;color:var(--ink);background:rgba(43,36,25,0.05);border-radius:6px;padding:9px 13px;margin:0;max-width:640px}
+  .arch-tl-rep b{color:var(--gold);font-weight:600}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header class="page-head">
-    <h1>中歐五國歷史時間軸</h1>
-    <ul class="legend">
-      <li><span class="dot" style="background:var(--c-gray)"></span>部族 / 前國家</li>
-      <li><span class="dot" style="background:var(--c-blue)"></span>神聖羅馬帝國</li>
-      <li><span class="dot" style="background:var(--c-green)"></span>本地獨立政權</li>
-      <li><span class="dot" style="background:var(--c-gold)"></span>哈布斯堡王朝</li>
-      <li><span class="dot" style="background:var(--c-rust)"></span>奧斯曼帝國</li>
-      <li><span class="dot" style="background:var(--c-wine)"></span>納粹 / 二戰</li>
-      <li><span class="dot" style="background:var(--c-verdigris)"></span>共產陣營</li>
-    </ul>
+    <h1>中歐五國旅行小抄 🇩🇪 🇦🇹 🇭🇺 🇸🇰 🇨🇿</h1>
   </header>
+
+  <nav class="view-tabs" role="tablist" aria-label="內容分頁">
+    <button class="view-tab active" type="button" role="tab" id="tab-timeline" aria-selected="true" aria-controls="view-timeline" data-view="timeline">歷史時間軸</button>
+    <button class="view-tab" type="button" role="tab" id="tab-architecture" aria-selected="false" aria-controls="view-architecture" data-view="architecture">建築風格</button>
+  </nav>
+
+  <div class="view" id="view-timeline" role="tabpanel" aria-labelledby="tab-timeline">
 
   <section class="tools" aria-label="查詢工具">
     <div class="tools-panel" id="toolsPanel">
@@ -295,6 +334,16 @@
       </div>
     </div>
   </section>
+
+  <ul class="legend">
+    <li><span class="dot" style="background:var(--c-gray)"></span>部族 / 前國家</li>
+    <li><span class="dot" style="background:var(--c-blue)"></span>神聖羅馬帝國</li>
+    <li><span class="dot" style="background:var(--c-green)"></span>本地獨立政權</li>
+    <li><span class="dot" style="background:var(--c-gold)"></span>哈布斯堡王朝</li>
+    <li><span class="dot" style="background:var(--c-rust)"></span>奧斯曼帝國</li>
+    <li><span class="dot" style="background:var(--c-wine)"></span>納粹 / 二戰</li>
+    <li><span class="dot" style="background:var(--c-verdigris)"></span>共產陣營</li>
+  </ul>
 
   <div class="no-results" id="noResults">找不到符合條件的內容，試著放寬搜尋字或清除篩選。</div>
 
@@ -519,7 +568,61 @@
     <div class="entry-detail"><div class="entry-detail-inner"></div></div>
   </section>
 
-  <footer>為中歐五國行程整理 &middot; 慕尼黑 → 維也納 → 布達佩斯 → 布拉提斯拉瓦 → 布拉格</footer>
+  </div><!-- /view-timeline -->
+
+  <div class="view is-hidden" id="view-architecture" role="tabpanel" aria-labelledby="tab-architecture">
+
+    <ol class="arch-timeline">
+      <li class="arch-tl">
+        <div class="arch-tl-head"><span class="arch-tl-era">約 10–12 世紀</span><span class="arch-tl-name">羅曼式</span><span class="arch-tl-en">Romanesque</span></div>
+        <p class="arch-tl-desc">厚重石牆、小窗、半圓拱、防禦性強，目的是堅固耐用而非美觀，常用於早期城堡與修道院。</p>
+        <figure class="arch-tl-figure"><img src="Image/羅曼式＿薩爾茲堡.png" alt="羅曼式建築範例：薩爾茲堡" loading="lazy"></figure>
+        <p class="arch-tl-rep"><b>代表</b>　霍恩薩爾茲堡城堡的早期結構。</p>
+      </li>
+      <li class="arch-tl">
+        <div class="arch-tl-head"><span class="arch-tl-era">約 12–16 世紀</span><span class="arch-tl-name">哥德式</span><span class="arch-tl-en">Gothic</span></div>
+        <p class="arch-tl-desc">尖拱、飛扶壁、肋拱頂、彩色玫瑰窗，建築往上拉高，追求神聖、輕盈、向天空延伸的視覺效果，是教堂建築的巔峰技術。</p>
+        <figure class="arch-tl-figure"><img src="Image/哥德式＿聖維特大教堂.png" alt="哥德式建築範例：聖維特大教堂" loading="lazy"></figure>
+        <p class="arch-tl-rep"><b>代表</b>　聖維特大教堂、馬加什教堂的骨架、查理大橋、聖沃夫岡朝聖教堂。</p>
+      </li>
+      <li class="arch-tl">
+        <div class="arch-tl-head"><span class="arch-tl-era">約 15–16 世紀</span><span class="arch-tl-name">文藝復興</span><span class="arch-tl-en">Renaissance</span></div>
+        <p class="arch-tl-desc">重新回到古希臘羅馬的對稱、比例、圓拱、柱式系統，強調理性與和諧；與哥德式向上飛升的精神相反，更講究水平、穩定的秩序感。</p>
+        <figure class="arch-tl-figure"><img src="Image/文藝復興＿慕尼黑皇宮部分廳室.png" alt="文藝復興建築範例：慕尼黑皇宮部分廳室" loading="lazy"></figure>
+        <p class="arch-tl-rep"><b>代表</b>　慕尼黑皇宮的部分廳室。</p>
+      </li>
+
+      <li class="arch-tl">
+        <div class="arch-tl-head"><span class="arch-tl-era">約 17–18 世紀</span><span class="arch-tl-name">巴洛克</span><span class="arch-tl-en">Baroque</span></div>
+        <p class="arch-tl-desc">誇張、華麗、戲劇化，大量運用曲線、金箔裝飾、壁畫天頂、噴泉花園，目的是展現權力與財富，常見於皇室宮殿與天主教堂（反宗教改革時期以視覺震撼信徒）。</p>
+        <figure class="arch-tl-figure"><img src="Image/巴洛克_熊布朗宮.png" alt="巴洛克建築範例：熊布朗宮" loading="lazy"></figure>
+        <p class="arch-tl-rep"><b>代表</b>　熊布朗宮、美景宮、布拉提斯拉瓦城堡的翻修、查理大橋上的雕像群。</p>
+      </li>
+
+      <li class="arch-tl">
+        <div class="arch-tl-head"><span class="arch-tl-era">約 18 世紀末–19 世紀</span><span class="arch-tl-name">新古典主義</span><span class="arch-tl-en">Neoclassicism</span></div>
+        <p class="arch-tl-desc">對巴洛克過度裝飾的反彈，重新追求古希臘羅馬的簡潔比例、山牆、柱廊，強調理性與莊嚴。</p>
+        <figure class="arch-tl-figure"><img src="Image/新古典主義_聖伊什特萬聖殿.png" alt="新古典主義建築範例：聖伊什特萬聖殿" loading="lazy"></figure>
+        <p class="arch-tl-rep"><b>代表</b>　聖伊什特萬聖殿的整體架構。</p>
+      </li>
+
+      <li class="arch-tl">
+        <div class="arch-tl-head"><span class="arch-tl-era">19 世紀</span><span class="arch-tl-name">新哥德式 / 浪漫主義復古</span><span class="arch-tl-en">Neo-Gothic / Historicism</span></div>
+        <p class="arch-tl-desc">工業時代的歐洲開始懷舊，用當時的新技術（鋼鐵結構）重現中世紀的視覺語言，本質上是「想像出來的過去」而非真正的中世紀建築，帶有強烈的民族浪漫主義色彩。</p>
+        <figure class="arch-tl-figure"><img src="Image/新歌德浪漫主義復古_新天鵝堡.png" alt="新哥德式建築範例：新天鵝堡" loading="lazy"></figure>
+        <p class="arch-tl-rep"><b>代表</b>　新天鵝堡、漁人堡、馬加什教堂的彩色屋瓦裝飾。</p>
+      </li>
+
+      <li class="arch-tl">
+        <div class="arch-tl-head"><span class="arch-tl-era">約 1890–1910 年代</span><span class="arch-tl-name">新藝術運動</span><span class="arch-tl-en">Art Nouveau</span></div>
+        <p class="arch-tl-desc">對工業化制式美學的反動，強調自然界的流線、有機曲線、花卉藤蔓圖案，材質上常結合鐵件、彩色玻璃、磁磚，是進入 20 世紀前最後一波純手工裝飾美學。</p>
+        <figure class="arch-tl-figure"><img src="Image/新藝術運動_藍色教堂.png" alt="新藝術運動建築範例：布拉提斯拉瓦藍色教堂" loading="lazy"></figure>
+        <p class="arch-tl-rep"><b>代表</b>　布拉提斯拉瓦的藍色教堂。</p>
+      </li>
+    </ol>
+  </div><!-- /view-architecture -->
+
+  <footer>中歐五國旅行小抄 &middot; 慕尼黑 → 維也納 → 布達佩斯 → 布拉提斯拉瓦 → 布拉格</footer>
 
 </div>
 
@@ -529,6 +632,7 @@
   var entries = Array.prototype.slice.call(document.querySelectorAll('.entry'));
   var cells = Array.prototype.slice.call(document.querySelectorAll('.cell'));
   var resultCount = document.getElementById('resultCount');
+  var resultsLine = document.querySelector('.results-line');
   var noResults = document.getElementById('noResults');
 
   function escapeHtml(text){
@@ -773,9 +877,13 @@
     });
 
     noResults.classList.toggle('show', visibleSections === 0);
-    resultCount.textContent = !activeCountry
-      ? '顯示全部資料'
-      : activeCountry + ' · ' + visibleSections + ' 個時期';
+    if(!activeCountry){
+      resultsLine.style.display = 'none';
+      resultCount.textContent = '';
+    } else {
+      resultsLine.style.display = '';
+      resultCount.textContent = activeCountry + ' · ' + visibleSections + ' 個時期';
+    }
   }
 
   cells.forEach(function(cell){
@@ -834,6 +942,21 @@
   } else {
     entries.forEach(function(el){ el.classList.add('visible'); });
   }
+
+  document.querySelectorAll('.view-tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var view = tab.getAttribute('data-view');
+      document.querySelectorAll('.view-tab').forEach(function(t){
+        var on = t === tab;
+        t.classList.toggle('active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      document.querySelectorAll('.view').forEach(function(v){
+        v.classList.toggle('is-hidden', v.id !== 'view-' + view);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
 </script>
 </body>
 </html>
