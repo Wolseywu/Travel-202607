@@ -6,7 +6,7 @@
 <title>歷史課沒在聽</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- 網頁快捷 App -->
 <link rel="icon" type="image/png" href="./Logo07.png">
 <link rel="apple-touch-icon" href="./Logo07.png">
@@ -31,9 +31,9 @@
     --c-rust:#8c4a2b;
     --c-wine:#7a2e2e;
     --c-verdigris:#3e6b5c;
-    --serif: 'Spectral', Georgia, serif;
+    --serif: 'IBM Plex Sans', system-ui, sans-serif;
     --sans: 'IBM Plex Sans', system-ui, sans-serif;
-    --mono: 'IBM Plex Mono', monospace;
+    --mono: 'IBM Plex Sans', system-ui, sans-serif;
   }
 
   *{box-sizing:border-box}
@@ -140,6 +140,7 @@
   .cell.cat-verdigris{background:var(--c-verdigris)}
 
   .landmarks{margin:18px 0 0}
+  .entry-date + .landmarks{margin-top:0}
   .landmarks-label{
     font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
     color:var(--gold-dim);margin:0 0 10px;
@@ -164,6 +165,14 @@
   .country-tag{
     font-family:var(--sans);font-size:9px;font-weight:600;color:var(--ink-soft);
     background:rgba(43,36,25,0.06);border-radius:999px;padding:3px 7px;
+  }
+  .style-tag{
+    font-family:var(--sans);font-size:9px;font-weight:600;color:var(--ink-soft);
+    background:rgba(43,36,25,0.06);border-radius:999px;padding:3px 7px;
+  }
+  .landmark-arch{
+    font-size:12px;line-height:1.65;color:rgba(51,41,27,0.56);
+    margin:8px 0 0;padding-top:8px;border-top:1px dashed rgba(43,36,25,0.14);
   }
 
   .people{margin:18px 0 4px}
@@ -352,17 +361,18 @@
   </div>
 
   <section class="entry">
-    <div class="entry-date"><span class="seal">史前 / 自然</span><span class="entry-title">沿途自然與史前遺跡</span></div>
+    <div class="entry-date"><span class="seal">史前 / 自然</span><span class="entry-title">自然與史前遺跡</span></div>
     <div class="landmarks">
       <p class="landmarks-label">沿途景點</p>
       <div class="landmark-grid">
-        <div class="landmark-card cat-gray" data-countries="🇦🇹 奧地利">
+        <div class="landmark-card cat-gray" data-countries="🇦🇹 奧地利" data-style="民居建築">
           <div class="landmark-head"><span class="landmark-name">哈爾施塔特</span><span class="landmark-cat">史前文化</span></div>
-          <p class="landmark-desc">西元前800至500年的哈爾施塔特文化由此地得名,整個歐洲鐵器時代早期都以此命名;後因岩鹽貿易,哈布斯堡時期發展成礦業小鎮。</p>
+          <p class="landmark-desc">西元前 800 至 500 年的哈爾施塔特文化由此地得名，整個歐洲鐵器時代早期都以此命名；後因岩鹽貿易，哈布斯堡時期發展成礦業小鎮。</p>
+          <p class="landmark-arch">不是單一建築，而是阿爾卑斯山區傳統木造建築群，陡峭屋頂應對積雪，色彩鮮豔的木構房舍堆疊在山坡與湖泊之間，是民居建築而非紀念性建築。</p>
         </div>
         <div class="landmark-card cat-gray" data-countries="🇩🇪 德國">
           <div class="landmark-head"><span class="landmark-name">國王湖</span><span class="landmark-cat">獨立教會邦領地</span></div>
-          <p class="landmark-desc">阿爾卑斯冰河湖泊,歷史上屬於貝希特斯加登修道院領地,1803年才併入巴伐利亞。</p>
+          <p class="landmark-desc">阿爾卑斯冰河湖泊，歷史上屬於貝希特斯加登修道院領地，1803 年才併入巴伐利亞。</p>
         </div>
       </div>
     </div>
@@ -371,49 +381,51 @@
   <section class="entry">
     <div class="entry-date"><span class="seal">500–800</span><span class="entry-title">部族遷徙時期</span></div>
     <div class="entry-row">
-      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇩🇪 德國" data-d="巴伐利亞公爵領:日耳曼部族阿吉洛芬家族在多瑙河上游建立的公爵領地,788年前維持半獨立狀態。">巴伐利亞公爵領</div>
-      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇦🇹 奧地利" data-d="阿瓦爾人統治:來自草原的阿瓦爾人控制多瑙河中游一帶,直到查理曼於8世紀末擊敗他們。">阿瓦爾人統治</div>
-      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇭🇺 匈牙利" data-d="阿瓦爾人統治:喀爾巴阡盆地此時由阿瓦爾人控制,馬扎爾人尚未抵達。">阿瓦爾人統治</div>
-      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇸🇰 斯洛伐克" data-d="斯拉夫部族:今斯洛伐克地區同屬斯拉夫部族聚落圈,與波希米亞、摩拉維亞同源。">斯拉夫部族</div>
-      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇨🇿 捷克" data-d="斯拉夫部族:波希米亞與摩拉維亞一帶由分散的斯拉夫部族聚落構成,尚無統一政權。">斯拉夫部族</div>
+      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇩🇪 德國" data-d="巴伐利亞公爵領：日耳曼部族阿吉洛芬家族在多瑙河上游建立的公爵領地，788 年前維持半獨立狀態。">巴伐利亞公爵領</div>
+      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇦🇹 奧地利" data-d="阿瓦爾人統治：來自草原的阿瓦爾人控制多瑙河中游一帶，直到查理曼於 8 世紀末擊敗他們。">阿瓦爾人統治</div>
+      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇭🇺 匈牙利" data-d="阿瓦爾人統治：喀爾巴阡盆地此時由阿瓦爾人控制，馬扎爾人尚未抵達。">阿瓦爾人統治</div>
+      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇸🇰 斯洛伐克" data-d="斯拉夫部族：今斯洛伐克地區同屬斯拉夫部族聚落圈，與波希米亞、摩拉維亞同源。">斯拉夫部族</div>
+      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇨🇿 捷克" data-d="斯拉夫部族：波希米亞與摩拉維亞一帶由分散的斯拉夫部族聚落構成，尚無統一政權。">斯拉夫部族</div>
     </div>
     <div class="entry-detail"><div class="entry-detail-inner"></div></div>
   </section>
-  <p class="margin-note">788 查理曼征服巴伐利亞,設立「東方邊區」(奧地利雛形)</p>
+  <p class="margin-note">788 查理曼征服巴伐利亞，設立「東方邊區」（奧地利雛形）</p>
 
   <section class="entry">
     <div class="entry-date"><span class="seal">800–1000</span><span class="entry-title">帝國奠基</span></div>
     <div class="entry-row">
-      <div class="cell cat-blue" data-cat="神聖羅馬帝國" data-c="🇩🇪 德國" data-d="法蘭克帝國 → 神聖羅馬帝國:800年查理曼稱帝,962年奧托一世延續帝位傳統,正式建立神聖羅馬帝國。">法蘭克帝國→神聖羅馬帝國</div>
-      <div class="cell cat-blue" data-cat="神聖羅馬帝國" data-c="🇦🇹 奧地利" data-d="東方邊區 → 邊區伯爵領:976年神聖羅馬皇帝將此地封給巴本堡家族,「奧地利」作為政治實體於此確立。">東方邊區→邊區伯爵領</div>
-      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇭🇺 匈牙利" data-d="馬扎爾人征服:895至907年間,馬扎爾人自東方草原進入喀爾巴阡盆地,滅大摩拉維亞公國。">馬扎爾人征服</div>
-      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇸🇰 斯洛伐克" data-d="大摩拉維亞公國:斯洛伐克地區是大摩拉維亞公國的核心領土之一,907年被馬扎爾人擊潰。">大摩拉維亞公國</div>
-      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇨🇿 捷克" data-d="大摩拉維亞公國:833至907年間,斯拉夫人在波希米亞與斯洛伐克一帶建立的第一個自主政治實體。">大摩拉維亞公國</div>
+      <div class="cell cat-blue" data-cat="神聖羅馬帝國" data-c="🇩🇪 德國" data-d="法蘭克帝國 → 神聖羅馬帝國：800 年查理曼稱帝，962 年奧托一世延續帝位傳統，正式建立神聖羅馬帝國。">法蘭克帝國→神聖羅馬帝國</div>
+      <div class="cell cat-blue" data-cat="神聖羅馬帝國" data-c="🇦🇹 奧地利" data-d="東方邊區 → 邊區伯爵領：976 年神聖羅馬皇帝將此地封給巴本堡家族，「奧地利」作為政治實體於此確立。">東方邊區→邊區伯爵領</div>
+      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇭🇺 匈牙利" data-d="馬扎爾人征服：895 至 907 年間，馬扎爾人自東方草原進入喀爾巴阡盆地，滅大摩拉維亞公國。">馬扎爾人征服</div>
+      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇸🇰 斯洛伐克" data-d="大摩拉維亞公國：斯洛伐克地區是大摩拉維亞公國的核心領土之一，907 年被馬扎爾人擊潰。">大摩拉維亞公國</div>
+      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇨🇿 捷克" data-d="大摩拉維亞公國：833 至 907 年間，斯拉夫人在波希米亞與斯洛伐克一帶建立的第一個自主政治實體。">大摩拉維亞公國</div>
     </div>
     <div class="entry-detail"><div class="entry-detail-inner"></div></div>
   </section>
-  <p class="margin-note">962 神聖羅馬帝國成立 ・ 1000年 匈牙利王國建立</p>
+  <p class="margin-note">962 神聖羅馬帝國成立 ・ 1000 年 匈牙利王國建立</p>
 
   <section class="entry">
     <div class="entry-date"><span class="seal">1000–1273</span><span class="entry-title">中世紀王國林立</span></div>
     <div class="entry-row">
-      <div class="cell cat-blue" data-cat="神聖羅馬帝國" data-c="🇩🇪 德國" data-d="神聖羅馬帝國(諸侯林立):帝國境內由眾多公爵、主教轄區、自由城市組成,中央集權有限。">神聖羅馬帝國(諸侯林立)</div>
-      <div class="cell cat-blue" data-cat="神聖羅馬帝國" data-c="🇦🇹 奧地利" data-d="巴本堡公爵領:1156年升格為公爵領,巴本堡家族統治直到1246年絕嗣。">巴本堡公爵領</div>
-      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇭🇺 匈牙利" data-d="匈牙利王國:1000╱1001年伊什特萬一世受教皇加冕,正式建國。">匈牙利王國</div>
-      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇸🇰 斯洛伐克" data-d="作為匈牙利王國領土:自馬扎爾人征服後,斯洛伐克地區即併入匈牙利王國版圖。">匈牙利王國領土</div>
-      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇨🇿 捷克" data-d="波希米亞王國:1198╱1212年確立王國地位,普熱米斯爾家族統治下的自主王國。">波希米亞王國</div>
+      <div class="cell cat-blue" data-cat="神聖羅馬帝國" data-c="🇩🇪 德國" data-d="神聖羅馬帝國（諸侯林立）：帝國境內由眾多公爵、主教轄區、自由城市組成，中央集權有限。">神聖羅馬帝國（諸侯林立）</div>
+      <div class="cell cat-blue" data-cat="神聖羅馬帝國" data-c="🇦🇹 奧地利" data-d="巴本堡公爵領：1156 年升格為公爵領，巴本堡家族統治直到 1246 年絕嗣。">巴本堡公爵領</div>
+      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇭🇺 匈牙利" data-d="匈牙利王國：1000╱1001 年伊什特萬一世受教皇加冕，正式建國。">匈牙利王國</div>
+      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇸🇰 斯洛伐克" data-d="作為匈牙利王國領土：自馬扎爾人征服後，斯洛伐克地區即併入匈牙利王國版圖。">匈牙利王國領土</div>
+      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇨🇿 捷克" data-d="波希米亞王國：1198╱1212 年確立王國地位，普熱米斯爾家族統治下的自主王國。">波希米亞王國</div>
     </div>
     <div class="entry-detail"><div class="entry-detail-inner"></div></div>
     <div class="landmarks">
       <p class="landmarks-label">沿途景點</p>
       <div class="landmark-grid">
-        <div class="landmark-card cat-blue" data-countries="🇦🇹 奧地利">
+        <div class="landmark-card cat-blue" data-countries="🇦🇹 奧地利" data-style="羅曼式">
           <div class="landmark-head"><span class="landmark-name">薩爾茨堡城堡</span><span class="landmark-cat">薩爾茨堡總主教轄區</span></div>
-          <p class="landmark-desc">1077年由薩爾茨堡總主教下令建造;薩爾茨堡是神聖羅馬帝國內一個自治教會邦,直到1803年才併入奧地利。</p>
+          <p class="landmark-desc">1077 年由薩爾茨堡總主教下令建造；薩爾茨堡是神聖羅馬帝國內一個自治教會邦，直到 1803 年才併入奧地利。</p>
+          <p class="landmark-arch">中世紀羅曼式要塞建築，11 世紀開始興建，厚重石牆、防禦性高，是歐洲保存最完整的中世紀城堡之一，跟新天鵝堡的「裝飾性」完全相反，這個是真正為了打仗蓋的。</p>
         </div>
-        <div class="landmark-card cat-green" data-countries="🇭🇺 匈牙利">
+        <div class="landmark-card cat-green" data-countries="🇭🇺 匈牙利" data-style="巴洛克">
           <div class="landmark-head"><span class="landmark-name">布達城堡</span><span class="landmark-cat">匈牙利王國</span></div>
-          <p class="landmark-desc">1247年匈牙利國王貝拉四世在蒙古入侵後下令建造;今日的巴洛克外觀其實是18世紀哈布斯堡時期重建的成果。</p>
+          <p class="landmark-desc">1247 年匈牙利國王貝拉四世在蒙古入侵後下令建造；今日的巴洛克外觀其實是 18 世紀哈布斯堡時期重建的成果。</p>
+          <p class="landmark-arch">歷史上多次重建，現存主體是 18 世紀巴洛克風格，但城堡山本身有中世紀地基。</p>
         </div>
       </div>
     </div>
@@ -423,73 +435,82 @@
   <section class="entry">
     <div class="entry-date"><span class="seal">1273–1526</span><span class="entry-title">哈布斯堡興起</span></div>
     <div class="entry-row">
-      <div class="cell cat-blue" data-cat="神聖羅馬帝國" data-c="🇩🇪 德國" data-d="神聖羅馬帝國(諸侯林立):哈布斯堡家族雖常當選皇帝,但帝國本身仍由分散諸侯組成。">神聖羅馬帝國(諸侯林立)</div>
-      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇦🇹 奧地利" data-d="哈布斯堡公爵領:1273年魯道夫一世當選皇帝,1278年取得奧地利,開啟長達645年的統治。">哈布斯堡公爵領</div>
-      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇭🇺 匈牙利" data-d="匈牙利王國:獨立王國,1526年莫哈赤之役前的最後一段自主統治時期。">匈牙利王國</div>
-      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇸🇰 斯洛伐克" data-d="作為匈牙利王國領土:此階段斯洛伐克仍維持匈牙利王國的一部分,無自主地位。">匈牙利王國領土</div>
-      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇨🇿 捷克" data-d="波希米亞王國(查理四世黃金期):1346至1378年,布拉格成為神聖羅馬帝國首都,查理大橋╱布拉格城堡多在此時奠基。">波希米亞王國(查理四世黃金期)</div>
+      <div class="cell cat-blue" data-cat="神聖羅馬帝國" data-c="🇩🇪 德國" data-d="神聖羅馬帝國（諸侯林立）：哈布斯堡家族雖常當選皇帝，但帝國本身仍由分散諸侯組成。">神聖羅馬帝國（諸侯林立）</div>
+      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇦🇹 奧地利" data-d="哈布斯堡公爵領：1273 年魯道夫一世當選皇帝，1278 年取得奧地利，開啟長達 645 年的統治。">哈布斯堡公爵領</div>
+      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇭🇺 匈牙利" data-d="匈牙利王國：獨立王國，1526 年莫哈赤之役前的最後一段自主統治時期。">匈牙利王國</div>
+      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇸🇰 斯洛伐克" data-d="作為匈牙利王國領土：此階段斯洛伐克仍維持匈牙利王國的一部分，無自主地位。">匈牙利王國領土</div>
+      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇨🇿 捷克" data-d="波希米亞王國（查理四世黃金期）:1346 至 1378 年，布拉格成為神聖羅馬帝國首都，查理大橋╱布拉格城堡多在此時奠基。">波希米亞王國（查理四世黃金期）</div>
     </div>
     <div class="entry-detail"><div class="entry-detail-inner"></div></div>
     <div class="landmarks">
       <p class="landmarks-label">沿途景點</p>
       <div class="landmark-grid">
-        <div class="landmark-card cat-green" data-countries="🇩🇪 德國">
-          <div class="landmark-head"><span class="landmark-name">慕尼黑王宮</span><span class="landmark-cat">維特斯巴赫家族(巴伐利亞)</span></div>
-          <p class="landmark-desc">1385年起由巴伐利亞統治家族維特斯巴赫陸續興建,與哈布斯堡無關,歷經500多年擴建而成。</p>
+        <div class="landmark-card cat-green" data-countries="🇩🇪 德國" data-style="文藝復興">
+          <div class="landmark-head"><span class="landmark-name">慕尼黑王宮</span><span class="landmark-cat">維特斯巴赫家族（巴伐利亞）</span></div>
+          <p class="landmark-desc">1385 年起由巴伐利亞統治家族維特斯巴赫陸續興建，與哈布斯堡無關，歷經 500 多年擴建而成。</p>
+          <p class="landmark-arch">文藝復興到巴洛克、洛可可混合風格，歷代維特爾斯巴赫家族陸續擴建，內部廳室從早期文藝復興到 19 世紀新古典都有，等於一棟建築濃縮了好幾個世紀的品味演變。</p>
         </div>
-        <div class="landmark-card cat-blue" data-countries="🇦🇹 奧地利">
+        <div class="landmark-card cat-blue" data-countries="🇦🇹 奧地利" data-style="哥德式">
           <div class="landmark-head"><span class="landmark-name">聖沃夫岡教堂</span><span class="landmark-cat">修道院管轄</span></div>
-          <p class="landmark-desc">傳說西元976年建立,現存哥德式建築主要為14至15世紀所建,內有1481年完成的著名帕赫爾祭壇。</p>
+          <p class="landmark-desc">傳說西元 976 年建立，現存哥德式建築主要為 14 至 15 世紀所建，內有 1481 年完成的著名帕赫爾祭壇。</p>
+          <p class="landmark-arch">哥德式為主體，內部有著名的哥德式祭壇雕刻（Pacher Altar），木雕工藝極細緻，是阿爾卑斯山區哥德式藝術的代表作。</p>
         </div>
-        <div class="landmark-card cat-green" data-countries="🇨🇿 捷克">
+        <div class="landmark-card cat-green" data-countries="🇨🇿 捷克" data-style="哥德式">
           <div class="landmark-head"><span class="landmark-name">查理大橋</span><span class="landmark-cat">波希米亞王國</span></div>
-          <p class="landmark-desc">1357年由波希米亞國王查理四世(同時也是神聖羅馬帝國皇帝)下令建造;橋上雕像群是17、18世紀陸續增建的。</p>
+          <p class="landmark-desc">1357 年由波希米亞國王查理四世（同時也是神聖羅馬帝國皇帝）下令建造；橋上雕像群是 17、18 世紀陸續增建的。</p>
+          <p class="landmark-arch">哥德式橋樑，14 世紀建造，橋上的巴洛克雕像群是 17–18 世紀陸續加上去的，所以橋本體哥德、裝飾巴洛克，兩個時期疊加在同一座橋上。</p>
         </div>
-        <div class="landmark-card cat-green" data-countries="🇨🇿 捷克">
+        <div class="landmark-card cat-green" data-countries="🇨🇿 捷克" data-style="哥德式">
           <div class="landmark-head"><span class="landmark-name">布拉格城堡與聖維特大教堂</span><span class="landmark-cat">波希米亞王國</span></div>
-          <p class="landmark-desc">城堡選址9世紀已有防禦工事;教堂則由查理四世1344年起建,卻一路蓋到1929年獨立後的捷克斯洛伐克時期才完工。</p>
+          <p class="landmark-desc">城堡選址 9 世紀已有防禦工事；教堂則由查理四世 1344 年起建，卻一路蓋到 1929 年獨立後的捷克斯洛伐克時期才完工。</p>
+          <p class="landmark-arch">聖維特大教堂是純正哥德式大教堂，飛扶壁、尖拱、玫瑰窗一應俱全，建造跨越近 600 年（14–20 世紀），是全歐洲少數哥德式工程延續到 20 世紀才真正完工的案例。</p>
         </div>
-        <div class="landmark-card cat-green" data-countries="🇨🇿 捷克">
+        <div class="landmark-card cat-green" data-countries="🇨🇿 捷克" data-style="哥德式">
           <div class="landmark-head"><span class="landmark-name">布拉格天文鐘</span><span class="landmark-cat">波希米亞王國</span></div>
-          <p class="landmark-desc">建於1410年,是世界上仍在運作的天文鐘中最古老的一座。</p>
+          <p class="landmark-desc">建於 1410 年，是世界上仍在運作的天文鐘中最古老的一座。</p>
+          <p class="landmark-arch">哥德式鐘樓本體，鐘面本身是中世紀天文學與宗教寓言結合的工藝品，不算典型建築風格分類，更像是一件嵌在建築裡的機械藝術品。</p>
         </div>
-        <div class="landmark-card cat-green" data-countries="🇭🇺 匈牙利">
+        <div class="landmark-card cat-green" data-countries="🇭🇺 匈牙利" data-style="哥德式">
           <div class="landmark-head"><span class="landmark-name">馬提亞斯教堂</span><span class="landmark-cat">匈牙利王國</span></div>
-          <p class="landmark-desc">13至14世紀以哥德式重建,得名於15世紀匈牙利國王馬加什一世;後成為哈布斯堡皇帝1867年加冕的場所。</p>
+          <p class="landmark-desc">13 至 14 世紀以哥德式重建，得名於 15 世紀匈牙利國王馬加什一世；後成為哈布斯堡皇帝 1867 年加冕的場所。</p>
+          <p class="landmark-arch">哥德式為骨架，但屋頂的彩色菱形磁磚是 19 世紀新哥德式整修時加上的浪漫化裝飾，跟新天鵝堡一樣帶有「想像中的中世紀」色彩。</p>
         </div>
       </div>
     </div>
   </section>
-  <p class="margin-note">1526 莫哈赤之役,哈布斯堡繼承波希米亞與匈牙利王位</p>
+  <p class="margin-note">1526 莫哈赤之役，哈布斯堡繼承波希米亞與匈牙利王位</p>
 
   <section class="entry">
     <div class="entry-date"><span class="seal">1526–1804</span><span class="entry-title">哈布斯堡統一 / 奧斯曼威脅</span></div>
     <div class="entry-row">
-      <div class="cell cat-blue" data-cat="神聖羅馬帝國" data-c="🇩🇪 德國" data-d="神聖羅馬帝國:1618至1648年三十年戰爭(起點為布拉格擲出窗外事件)後,帝國名存實亡。">神聖羅馬帝國</div>
-      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇦🇹 奧地利" data-d="哈布斯堡帝國核心:1529、1683年兩次維也納之圍,維也納成為對抗奧斯曼帝國的前線堡壘。">哈布斯堡帝國核心</div>
-      <div class="cell cat-rust" data-cat="奧斯曼帝國" data-c="🇭🇺 匈牙利" data-d="中部遭奧斯曼占領:1526年後匈牙利一分為三,中部由奧斯曼帝國直接統治,直到1699年才被哈布斯堡收復。">中部遭奧斯曼占領</div>
-      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇸🇰 斯洛伐克" data-d="布拉提斯拉瓦為匈牙利首都:1536至1783年,布拉提斯拉瓦(舊名Pressburg)是匈牙利王國的首都與加冕之城。">布拉提斯拉瓦為匈牙利首都</div>
-      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇨🇿 捷克" data-d="哈布斯堡領地:1526年波希米亞國王戰死後,哈布斯堡透過聯姻繼承波希米亞王位。">哈布斯堡領地</div>
+      <div class="cell cat-blue" data-cat="神聖羅馬帝國" data-c="🇩🇪 德國" data-d="神聖羅馬帝國：1618 至 1648 年三十年戰爭（起點為布拉格擲出窗外事件）後，帝國名存實亡。">神聖羅馬帝國</div>
+      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇦🇹 奧地利" data-d="哈布斯堡帝國核心：1529、1683 年兩次維也納之圍，維也納成為對抗奧斯曼帝國的前線堡壘。">哈布斯堡帝國核心</div>
+      <div class="cell cat-rust" data-cat="奧斯曼帝國" data-c="🇭🇺 匈牙利" data-d="中部遭奧斯曼占領：1526 年後匈牙利一分為三，中部由奧斯曼帝國直接統治，直到 1699 年才被哈布斯堡收復。">中部遭奧斯曼占領</div>
+      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇸🇰 斯洛伐克" data-d="布拉提斯拉瓦為匈牙利首都：1536 至 1783 年，布拉提斯拉瓦（舊名 Pressburg）是匈牙利王國的首都與加冕之城。">布拉提斯拉瓦為匈牙利首都</div>
+      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇨🇿 捷克" data-d="哈布斯堡領地：1526 年波希米亞國王戰死後，哈布斯堡透過聯姻繼承波希米亞王位。">哈布斯堡領地</div>
     </div>
     <div class="entry-detail"><div class="entry-detail-inner"></div></div>
     <div class="landmarks">
       <p class="landmarks-label">沿途景點</p>
       <div class="landmark-grid">
-        <div class="landmark-card cat-gold" data-countries="🇦🇹 奧地利">
+        <div class="landmark-card cat-gold" data-countries="🇦🇹 奧地利" data-style="巴洛克">
           <div class="landmark-head"><span class="landmark-name">美泉宮</span><span class="landmark-cat">哈布斯堡王朝</span></div>
-          <p class="landmark-desc">哈布斯堡皇室夏宮,18世紀瑪麗亞·特蕾莎女皇在位期間大規模擴建成今日的巴洛克樣貌。</p>
+          <p class="landmark-desc">哈布斯堡皇室夏宮，18 世紀瑪麗亞·特蕾莎女皇在位期間大規模擴建成今日的巴洛克樣貌。</p>
+          <p class="landmark-arch">巴洛克盛期代表，哈布斯堡皇室夏宮，金黃外牆、對稱花園、洛可可內裝，規模刻意對標凡爾賽宮，展現帝國權力。</p>
         </div>
-        <div class="landmark-card cat-gold" data-countries="🇦🇹 奧地利">
+        <div class="landmark-card cat-gold" data-countries="🇦🇹 奧地利" data-style="巴洛克">
           <div class="landmark-head"><span class="landmark-name">美景宮</span><span class="landmark-cat">哈布斯堡王朝</span></div>
-          <p class="landmark-desc">1714至1723年為歐根親王建造,1752年由哈布斯堡皇室收購,現展出克林姆《吻》等奧地利藝術收藏。</p>
+          <p class="landmark-desc">1714 至 1723 年為歐根親王建造，1752 年由哈布斯堡皇室收購，現展出克林姆《吻》等奧地利藝術收藏。</p>
+          <p class="landmark-arch">同樣是巴洛克，但更精緻典雅，由建築師 Hildebrandt 設計，上下兩宮之間有巴洛克庭園銜接，是維也納巴洛克建築的巔峰之作。</p>
         </div>
-        <div class="landmark-card cat-gold" data-countries="🇸🇰 斯洛伐克|🇭🇺 匈牙利|🇦🇹 奧地利">
+        <div class="landmark-card cat-gold" data-countries="🇸🇰 斯洛伐克|🇭🇺 匈牙利|🇦🇹 奧地利" data-style="巴洛克">
           <div class="landmark-head"><span class="landmark-name">布拉提斯拉瓦城堡</span><span class="landmark-cat">哈布斯堡王朝</span></div>
-          <p class="landmark-desc">城堡選址9世紀已有防禦工事,但歷史高峰是1536至1783年作為哈布斯堡治下匈牙利王國的首都與加冕地。</p>
+          <p class="landmark-desc">城堡選址 9 世紀已有防禦工事，但歷史高峰是 1536 至 1783 年作為哈布斯堡治下匈牙利王國的首都與加冕地。</p>
+          <p class="landmark-arch">中世紀起源，但現存外觀是 18 世紀巴洛克式翻修，方正的白色城堡造型，內部現代化展示空間。</p>
         </div>
-        <div class="landmark-card cat-blue" data-countries="🇦🇹 奧地利">
+        <div class="landmark-card cat-blue" data-countries="🇦🇹 奧地利" data-style="巴洛克">
           <div class="landmark-head"><span class="landmark-name">薩爾茨堡舊城與主教座堂</span><span class="landmark-cat">總主教轄區</span></div>
-          <p class="landmark-desc">798年設立大主教轄區,今日的巴洛克舊城風貌主要是17世紀總主教改建的成果,1803年結束獨立教會邦地位。</p>
+          <p class="landmark-desc">798 年設立大主教轄區，今日的巴洛克舊城風貌主要是 17 世紀總主教改建的成果，1803 年結束獨立教會邦地位。</p>
         </div>
       </div>
     </div>
@@ -499,45 +520,49 @@
   <section class="entry">
     <div class="entry-date"><span class="seal">1804–1918</span><span class="entry-title">帝國時代</span></div>
     <div class="entry-row">
-      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇩🇪 德國" data-d="1871德意志帝國統一:普魯士首相俾斯麥主導統一,在凡爾賽宮鏡廳宣布德意志帝國成立。">1871德意志帝國統一</div>
-      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇦🇹 奧地利" data-d="奧地利帝國 → 奧匈帝國:1804年改稱奧地利帝國,1867年為安撫匈牙利,改制為奧匈雙元帝國。">奧地利帝國→奧匈帝國</div>
-      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇭🇺 匈牙利" data-d="奧匈帝國雙首都之一:1867年雙元體制下,布達佩斯升格為帝國另一個首都,國會大廈╱漁夫堡多建於此時期。">奧匈帝國雙首都之一</div>
-      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇸🇰 斯洛伐克" data-d="奧匈帝國轄下:斯洛伐克屬於匈牙利那一半的治理範圍,直到1918年帝國解體。">奧匈帝國轄下</div>
-      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇨🇿 捷克" data-d="奧匈帝國轄下:波希米亞作為帝國工業最發達的地區,長期屬於奧地利那一半治理範圍。">奧匈帝國轄下</div>
+      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇩🇪 德國" data-d="1871 德意志帝國統一：普魯士首相俾斯麥主導統一，在凡爾賽宮鏡廳宣布德意志帝國成立。">1871 德意志帝國統一</div>
+      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇦🇹 奧地利" data-d="奧地利帝國 → 奧匈帝國：1804 年改稱奧地利帝國，1867 年為安撫匈牙利，改制為奧匈雙元帝國。">奧地利帝國→奧匈帝國</div>
+      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇭🇺 匈牙利" data-d="奧匈帝國雙首都之一：1867 年雙元體制下，布達佩斯升格為帝國另一個首都，國會大廈╱漁夫堡多建於此時期。">奧匈帝國雙首都之一</div>
+      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇸🇰 斯洛伐克" data-d="奧匈帝國轄下：斯洛伐克屬於匈牙利那一半的治理範圍，直到 1918 年帝國解體。">奧匈帝國轄下</div>
+      <div class="cell cat-gold" data-cat="哈布斯堡王朝" data-c="🇨🇿 捷克" data-d="奧匈帝國轄下：波希米亞作為帝國工業最發達的地區，長期屬於奧地利那一半治理範圍。">奧匈帝國轄下</div>
     </div>
     <div class="entry-detail"><div class="entry-detail-inner"></div></div>
     <div class="landmarks">
       <p class="landmarks-label">沿途景點</p>
       <div class="landmark-grid">
-        <div class="landmark-card cat-green" data-countries="🇩🇪 德國">
-          <div class="landmark-head"><span class="landmark-name">新天鵝堡</span><span class="landmark-cat">維特斯巴赫家族(巴伐利亞)</span></div>
-          <p class="landmark-desc">1869至1886年由巴伐利亞國王路德維希二世建造,屬維特斯巴赫家族而非哈布斯堡;此時巴伐利亞已加入1871年的德意志帝國,但仍保有自己的國王。</p>
+        <div class="landmark-card cat-green" data-countries="🇩🇪 德國" data-style="浪漫主義復古">
+          <div class="landmark-head"><span class="landmark-name">新天鵝堡</span><span class="landmark-cat">維特斯巴赫家族（巴伐利亞）</span></div>
+          <p class="landmark-desc">1869 至 1886 年由巴伐利亞國王路德維希二世建造，屬維特斯巴赫家族而非哈布斯堡；此時巴伐利亞已加入 1871 年的德意志帝國，但仍保有自己的國王。</p>
+          <p class="landmark-arch">19 世紀浪漫主義復古建築，路德維希二世仿照中世紀騎士城堡的想像打造，融合羅曼式、哥德式、拜占庭元素，但其實是用當時最新的鋼鐵結構技術蓋的「假古蹟」，本質上更接近迪士尼城堡的原型而非真正的中世紀建築。</p>
         </div>
-        <div class="landmark-card cat-gold" data-countries="🇭🇺 匈牙利">
+        <div class="landmark-card cat-gold" data-countries="🇭🇺 匈牙利" data-style="新古典主義">
           <div class="landmark-head"><span class="landmark-name">聖伊什特萬大教堂</span><span class="landmark-cat">奧匈帝國</span></div>
-          <p class="landmark-desc">1851至1905年建造,以匈牙利建國者聖伊什特萬一世(西元1000年加冕)為名,完工年代恰好落在奧匈雙元帝國時期。</p>
+          <p class="landmark-desc">1851 至 1905 年建造，以匈牙利建國者聖伊什特萬一世（西元 1000 年加冕）為名，完工年代恰好落在奧匈雙元帝國時期。</p>
+          <p class="landmark-arch">新古典主義 + 新文藝復興，希臘十字平面、巨大圓頂，19 世紀末完工，融合古典比例與天主教堂的莊嚴感。</p>
         </div>
-        <div class="landmark-card cat-gold" data-countries="🇭🇺 匈牙利">
+        <div class="landmark-card cat-gold" data-countries="🇭🇺 匈牙利" data-style="浪漫主義復古">
           <div class="landmark-head"><span class="landmark-name">漁人堡</span><span class="landmark-cat">奧匈帝國</span></div>
-          <p class="landmark-desc">1899至1902年建造,為慶祝1896年匈牙利建國千年而興建的裝飾性建築,象徵布達佩斯與維也納平起平坐。</p>
+          <p class="landmark-desc">1899 至 1902 年建造，為慶祝 1896 年匈牙利建國千年而興建的裝飾性建築，象徵布達佩斯與維也納平起平坐。</p>
+          <p class="landmark-arch">這個最特別，看起來像中世紀城牆，其實是 1900 年前後純裝飾性建造，新羅曼式風格的觀景平台，從來沒有軍事用途，是徹底的浪漫主義產物。</p>
         </div>
-        <div class="landmark-card cat-gold" data-countries="🇸🇰 斯洛伐克|🇭🇺 匈牙利">
+        <div class="landmark-card cat-gold" data-countries="🇸🇰 斯洛伐克|🇭🇺 匈牙利" data-style="新藝術運動">
           <div class="landmark-head"><span class="landmark-name">藍教堂</span><span class="landmark-cat">奧匈帝國</span></div>
-          <p class="landmark-desc">1908至1913年由建築師厄登·萊希納設計,新藝術風格,是奧匈帝國末期布拉提斯拉瓦最具代表性的建築之一。</p>
+          <p class="landmark-desc">1908 至 1913 年由建築師厄登·萊希納設計，新藝術風格，是奧匈帝國末期布拉提斯拉瓦最具代表性的建築之一。</p>
+          <p class="landmark-arch">新藝術運動（Art Nouveau），20 世紀初建造，整體淺藍色配色、流線造型，跟前面所有古典、哥德建築完全不同調性，是這趟行程裡唯一的新藝術代表作。</p>
         </div>
       </div>
     </div>
   </section>
-  <p class="margin-note">1918 一戰結束,奧匈帝國解體</p>
+  <p class="margin-note">1918 一戰結束，奧匈帝國解體</p>
 
   <section class="entry">
     <div class="entry-date"><span class="seal">1918–1945</span><span class="entry-title">獨立共和與二戰</span></div>
     <div class="entry-row">
-      <div class="cell cat-wine" data-cat="納粹 / 二戰" data-c="🇩🇪 德國" data-d="威瑪共和 → 納粹德國:1933年希特勒上台,1938年慕尼黑協定同意德國併吞捷克蘇台德區。">威瑪共和→納粹德國</div>
-      <div class="cell cat-wine" data-cat="納粹 / 二戰" data-c="🇦🇹 奧地利" data-d="第一共和 → 德奧合併:1938年3月希特勒率軍進入維也納,奧地利暫時從地圖上消失。">第一共和→德奧合併</div>
-      <div class="cell cat-wine" data-cat="納粹 / 二戰" data-c="🇭🇺 匈牙利" data-d="獨立王國 → 納粹同盟國:1918年帝國解體後成為獨立王國,後加入德國陣營參戰。">獨立王國→納粹同盟國</div>
-      <div class="cell cat-wine" data-cat="納粹 / 二戰" data-c="🇸🇰 斯洛伐克" data-d="捷克斯洛伐克 → 納粹傀儡國:1939至1945年間曾出現一個受納粹扶植的「斯洛伐克國」。">捷克斯洛伐克→納粹傀儡國</div>
-      <div class="cell cat-wine" data-cat="納粹 / 二戰" data-c="🇨🇿 捷克" data-d="捷克斯洛伐克 → 納粹占領:1918年捷克與斯洛伐克合併建國,1939年遭納粹德國占領。">捷克斯洛伐克→納粹占領</div>
+      <div class="cell cat-wine" data-cat="納粹 / 二戰" data-c="🇩🇪 德國" data-d="威瑪共和 → 納粹德國：1933 年希特勒上台，1938 年慕尼黑協定同意德國併吞捷克蘇台德區。">威瑪共和→納粹德國</div>
+      <div class="cell cat-wine" data-cat="納粹 / 二戰" data-c="🇦🇹 奧地利" data-d="第一共和 → 德奧合併：1938 年 3 月希特勒率軍進入維也納，奧地利暫時從地圖上消失。">第一共和→德奧合併</div>
+      <div class="cell cat-wine" data-cat="納粹 / 二戰" data-c="🇭🇺 匈牙利" data-d="獨立王國 → 納粹同盟國：1918 年帝國解體後成為獨立王國，後加入德國陣營參戰。">獨立王國→納粹同盟國</div>
+      <div class="cell cat-wine" data-cat="納粹 / 二戰" data-c="🇸🇰 斯洛伐克" data-d="捷克斯洛伐克 → 納粹傀儡國：1939 至 1945 年間曾出現一個受納粹扶植的「斯洛伐克國」。">捷克斯洛伐克→納粹傀儡國</div>
+      <div class="cell cat-wine" data-cat="納粹 / 二戰" data-c="🇨🇿 捷克" data-d="捷克斯洛伐克 → 納粹占領：1918 年捷克與斯洛伐克合併建國，1939 年遭納粹德國占領。">捷克斯洛伐克→納粹占領</div>
     </div>
     <div class="entry-detail"><div class="entry-detail-inner"></div></div>
   </section>
@@ -546,11 +571,11 @@
   <section class="entry">
     <div class="entry-date"><span class="seal">1945–1989</span><span class="entry-title">冷戰時代</span></div>
     <div class="entry-row">
-      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇩🇪 德國" data-d="東西德分裂:戰後分裂為西德(資本主義陣營)與東德(蘇聯陣營),1990年才重新統一。">東西德分裂</div>
-      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇦🇹 奧地利" data-d="永久中立(1955):《國家條約》簽訂後四國占領軍撤離,憲法宣布永久中立,不加入任何軍事同盟。">永久中立(1955)</div>
-      <div class="cell cat-verdigris" data-cat="共產陣營" data-c="🇭🇺 匈牙利" data-d="蘇聯陣營(1956革命):1956年布達佩斯街頭爆發反蘇起義,遭蘇聯坦克鎮壓。">蘇聯陣營(1956革命)</div>
-      <div class="cell cat-verdigris" data-cat="共產陣營" data-c="🇸🇰 斯洛伐克" data-d="蘇聯陣營:作為捷克斯洛伐克的一部分,同樣納入蘇聯陣營的計劃經濟體制。">蘇聯陣營</div>
-      <div class="cell cat-verdigris" data-cat="共產陣營" data-c="🇨🇿 捷克" data-d="蘇聯陣營(布拉格之春):1968年杜布切克的改革運動遭蘇聯坦克鎮壓終結。">蘇聯陣營(布拉格之春)</div>
+      <div class="cell cat-gray" data-cat="部族 / 前國家" data-c="🇩🇪 德國" data-d="東西德分裂：戰後分裂為西德（資本主義陣營）與東德（蘇聯陣營）,1990 年才重新統一。">東西德分裂</div>
+      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇦🇹 奧地利" data-d="永久中立（1955):《國家條約》簽訂後四國占領軍撤離，憲法宣布永久中立，不加入任何軍事同盟。">永久中立（1955)</div>
+      <div class="cell cat-verdigris" data-cat="共產陣營" data-c="🇭🇺 匈牙利" data-d="蘇聯陣營（1956 革命）:1956 年布達佩斯街頭爆發反蘇起義，遭蘇聯坦克鎮壓。">蘇聯陣營（1956 革命）</div>
+      <div class="cell cat-verdigris" data-cat="共產陣營" data-c="🇸🇰 斯洛伐克" data-d="蘇聯陣營：作為捷克斯洛伐克的一部分，同樣納入蘇聯陣營的計劃經濟體制。">蘇聯陣營</div>
+      <div class="cell cat-verdigris" data-cat="共產陣營" data-c="🇨🇿 捷克" data-d="蘇聯陣營（布拉格之春）:1968 年杜布切克的改革運動遭蘇聯坦克鎮壓終結。">蘇聯陣營（布拉格之春）</div>
     </div>
     <div class="entry-detail"><div class="entry-detail-inner"></div></div>
   </section>
@@ -559,11 +584,11 @@
   <section class="entry">
     <div class="entry-date"><span class="seal">1989–現在</span><span class="entry-title">後共產 / 歐盟時代</span></div>
     <div class="entry-row">
-      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇩🇪 德國" data-d="統一的德國:1990年兩德統一,柏林圍牆倒塌的骨牌效應由捷克斯洛伐克與匈牙利率先開放邊境而起。">統一的德國</div>
-      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇦🇹 奧地利" data-d="歐盟成員國:1995年公投通過加入歐盟,從冷戰中立緩衝國轉型為歐洲整合的一員。">歐盟成員國</div>
-      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇭🇺 匈牙利" data-d="匈牙利共和國:1989年後重建民主體制,現為歐盟與申根區成員。">匈牙利共和國</div>
-      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇸🇰 斯洛伐克" data-d="斯洛伐克共和國(1993獨立):這是斯洛伐克歷史上第一次以獨立國家身分存在。">斯洛伐克共和國(1993獨立)</div>
-      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇨🇿 捷克" data-d="捷克共和國(1993獨立):1993年「天鵝絨離婚」,捷克斯洛伐克和平分裂為捷克與斯洛伐克兩國。">捷克共和國(1993獨立)</div>
+      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇩🇪 德國" data-d="統一的德國：1990 年兩德統一，柏林圍牆倒塌的骨牌效應由捷克斯洛伐克與匈牙利率先開放邊境而起。">統一的德國</div>
+      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇦🇹 奧地利" data-d="歐盟成員國：1995 年公投通過加入歐盟，從冷戰中立緩衝國轉型為歐洲整合的一員。">歐盟成員國</div>
+      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇭🇺 匈牙利" data-d="匈牙利共和國：1989 年後重建民主體制，現為歐盟與申根區成員。">匈牙利共和國</div>
+      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇸🇰 斯洛伐克" data-d="斯洛伐克共和國（1993 獨立）：這是斯洛伐克歷史上第一次以獨立國家身分存在。">斯洛伐克共和國（1993 獨立）</div>
+      <div class="cell cat-green" data-cat="本地獨立政權" data-c="🇨🇿 捷克" data-d="捷克共和國（1993 獨立）:1993 年「天鵝絨離婚」，捷克斯洛伐克和平分裂為捷克與斯洛伐克兩國。">捷克共和國（1993 獨立）</div>
     </div>
     <div class="entry-detail"><div class="entry-detail-inner"></div></div>
   </section>
@@ -642,31 +667,31 @@
   }
 
   var peopleData = [
-    {era:'500–800',name:'查理曼大帝',years:'約 742–814',role:'法蘭克國王、羅馬人的皇帝',countries:'🇩🇪 德國|🇦🇹 奧地利',mark:'查',desc:'788年征服巴伐利亞並擊敗阿瓦爾人，設置東方邊區，成為後來奧地利政治疆域的雛形。'},
-    {era:'800–1000',name:'奧托一世',years:'912–973',role:'神聖羅馬皇帝',countries:'🇩🇪 德國|🇦🇹 奧地利',mark:'奧',desc:'962年在羅馬加冕為皇帝，被視為神聖羅馬帝國的奠基者，重新串起德意志王權與羅馬帝位。'},
-    {era:'1000–1273',name:'伊什特萬一世',years:'約 975–1038',role:'首任匈牙利國王',countries:'🇭🇺 匈牙利|🇸🇰 斯洛伐克',mark:'伊',desc:'約1000年接受加冕，建立基督教匈牙利王國；布達佩斯的聖伊什特萬大教堂即以他命名。'},
-    {era:'1273–1526',name:'魯道夫一世',years:'1218–1291',role:'哈布斯堡王朝奠基者',countries:'🇦🇹 奧地利|🇩🇪 德國|🇨🇿 捷克',mark:'魯',desc:'1273年當選羅馬人的國王，1278年擊敗波希米亞王奧托卡二世，使奧地利成為哈布斯堡家族的核心領地。'},
+    {era:'500–800',name:'查理曼大帝',years:'約 742–814',role:'法蘭克國王、羅馬人的皇帝',countries:'🇩🇪 德國|🇦🇹 奧地利',mark:'查',desc:'788 年征服巴伐利亞並擊敗阿瓦爾人，設置東方邊區，成為後來奧地利政治疆域的雛形。'},
+    {era:'800–1000',name:'奧托一世',years:'912–973',role:'神聖羅馬皇帝',countries:'🇩🇪 德國|🇦🇹 奧地利',mark:'奧',desc:'962 年在羅馬加冕為皇帝，被視為神聖羅馬帝國的奠基者，重新串起德意志王權與羅馬帝位。'},
+    {era:'1000–1273',name:'伊什特萬一世',years:'約 975–1038',role:'首任匈牙利國王',countries:'🇭🇺 匈牙利|🇸🇰 斯洛伐克',mark:'伊',desc:'約 1000 年接受加冕，建立基督教匈牙利王國；布達佩斯的聖伊什特萬大教堂即以他命名。'},
+    {era:'1273–1526',name:'魯道夫一世',years:'1218–1291',role:'哈布斯堡王朝奠基者',countries:'🇦🇹 奧地利|🇩🇪 德國|🇨🇿 捷克',mark:'魯',desc:'1273 年當選羅馬人的國王，1278 年擊敗波希米亞王奧托卡二世，使奧地利成為哈布斯堡家族的核心領地。'},
     {era:'1273–1526',name:'查理四世',years:'1316–1378',role:'波希米亞國王、神聖羅馬皇帝',countries:'🇨🇿 捷克|🇩🇪 德國',mark:'查',desc:'將布拉格建設為帝國中心，主持興建查理大橋、擴建布拉格城堡，並為聖維特大教堂奠基。'},
     {era:'1273–1526',name:'揚·胡斯',years:'約 1370–1415',role:'波希米亞宗教改革者',countries:'🇨🇿 捷克',mark:'胡',desc:'在布拉格傳教並批判教會弊端，被處火刑後引發胡斯戰爭，深刻塑造捷克的宗教與民族認同。'},
     {era:'1273–1526',name:'馬提亞斯·科爾維努斯',years:'1443–1490',role:'匈牙利國王',countries:'🇭🇺 匈牙利|🇸🇰 斯洛伐克|🇨🇿 捷克|🇦🇹 奧地利',mark:'馬',desc:'又稱馬加什一世，推動匈牙利文藝復興並曾在布達舉行婚禮；布達城堡區的馬提亞斯教堂以他得名。'},
     {era:'1526–1804',name:'斐迪南一世',years:'1503–1564',role:'哈布斯堡君主、神聖羅馬皇帝',countries:'🇦🇹 奧地利|🇩🇪 德國|🇭🇺 匈牙利|🇸🇰 斯洛伐克|🇨🇿 捷克',mark:'斐',desc:'莫哈赤之役後取得波希米亞與匈牙利王位，奠定哈布斯堡統治中歐多民族領地的格局。'},
-    {era:'1526–1804',name:'蘇萊曼一世',years:'1494–1566',role:'奧斯曼帝國蘇丹',countries:'🇭🇺 匈牙利|🇦🇹 奧地利|🇸🇰 斯洛伐克',mark:'蘇',desc:'1526年在莫哈赤擊敗匈牙利，並於1529年圍攻維也納，使中歐長期處於哈布斯堡與奧斯曼的競逐之中。'},
+    {era:'1526–1804',name:'蘇萊曼一世',years:'1494–1566',role:'奧斯曼帝國蘇丹',countries:'🇭🇺 匈牙利|🇦🇹 奧地利|🇸🇰 斯洛伐克',mark:'蘇',desc:'1526 年在莫哈赤擊敗匈牙利，並於 1529 年圍攻維也納，使中歐長期處於哈布斯堡與奧斯曼的競逐之中。'},
     {era:'1526–1804',name:'魯道夫二世',years:'1552–1612',role:'神聖羅馬皇帝',countries:'🇨🇿 捷克|🇦🇹 奧地利|🇩🇪 德國',mark:'魯',desc:'將宮廷遷往布拉格，廣納藝術家、天文學家與煉金術士，使布拉格成為晚期文藝復興的文化與科學中心。'},
     {era:'1526–1804',name:'尤金親王',years:'1663–1736',role:'哈布斯堡軍事統帥',countries:'🇦🇹 奧地利|🇭🇺 匈牙利|🇸🇰 斯洛伐克',mark:'尤',desc:'在對奧斯曼戰爭中屢獲勝利，是哈布斯堡擴張的重要功臣；維也納美景宮原是他的夏宮。'},
     {era:'1526–1804',name:'瑪麗亞·特蕾莎',years:'1717–1780',role:'哈布斯堡君主',countries:'🇦🇹 奧地利|🇭🇺 匈牙利|🇸🇰 斯洛伐克|🇨🇿 捷克',mark:'瑪',desc:'推動行政、教育與軍事改革，鞏固多民族帝國；美泉宮在她統治期間擴建成今日所見的皇室宮殿。'},
     {era:'1526–1804',name:'約瑟夫二世',years:'1741–1790',role:'神聖羅馬皇帝',countries:'🇦🇹 奧地利|🇩🇪 德國|🇭🇺 匈牙利|🇸🇰 斯洛伐克|🇨🇿 捷克',mark:'約',desc:'推行宗教寬容、廢除農奴制等啟蒙改革，試圖以中央集權重塑哈布斯堡領地。'},
     {era:'1526–1804',name:'莫札特',years:'1756–1791',role:'作曲家',countries:'🇦🇹 奧地利',mark:'莫',desc:'出生於薩爾茨堡舊城，童年任職於總主教宮廷，後在維也納創作成熟期作品，是兩座旅遊城市的重要文化連結。'},
-    {era:'1526–1804',name:'拿破崙一世',years:'1769–1821',role:'法蘭西皇帝',countries:'🇩🇪 德國|🇦🇹 奧地利',mark:'拿',desc:'重組德意志地區並迫使法蘭茲二世於1806年放棄帝號，延續近九百年的神聖羅馬帝國至此終結。'},
-    {era:'1526–1804',name:'法蘭茲二世／一世',years:'1768–1835',role:'末代神聖羅馬皇帝、首任奧地利皇帝',countries:'🇦🇹 奧地利|🇩🇪 德國|🇭🇺 匈牙利|🇸🇰 斯洛伐克|🇨🇿 捷克',mark:'法',desc:'1804年建立奧地利帝國，1806年解散神聖羅馬帝國，親歷中歐由舊帝國轉向近代國家的關鍵交界。'},
-    {era:'1804–1918',name:'路德維希二世',years:'1845–1886',role:'巴伐利亞國王',countries:'🇩🇪 德國',mark:'路',desc:'以藝術贊助和夢幻城堡聞名，1869年下令興建新天鵝堡；工程在他去世時仍未完成。'},
-    {era:'1804–1918',name:'法蘭茲·約瑟夫一世',years:'1830–1916',role:'奧地利皇帝、匈牙利國王',countries:'🇦🇹 奧地利|🇭🇺 匈牙利|🇸🇰 斯洛伐克|🇨🇿 捷克',mark:'約',desc:'統治近68年，1867年建立奧匈雙元體制；維也納與布達佩斯今日許多代表性建築形成於其在位期間。'},
-    {era:'1804–1918',name:'伊麗莎白皇后',years:'1837–1898',role:'奧地利皇后、匈牙利王后',countries:'🇦🇹 奧地利|🇭🇺 匈牙利',mark:'茜',desc:'通稱茜茜，與匈牙利菁英關係密切，支持1867年奧匈妥協，至今仍是維也納宮廷文化的重要象徵。'},
-    {era:'1804–1918',name:'奧托·馮·俾斯麥',years:'1815–1898',role:'普魯士首相、德意志帝國首任宰相',countries:'🇩🇪 德國|🇦🇹 奧地利',mark:'俾',desc:'透過外交與三場統一戰爭促成1871年德意志帝國建立，重新改寫德語中歐的權力版圖。'},
-    {era:'1918–1945',name:'托馬斯·馬薩里克',years:'1850–1937',role:'捷克斯洛伐克首任總統',countries:'🇨🇿 捷克|🇸🇰 斯洛伐克',mark:'馬',desc:'一戰期間推動捷克斯洛伐克獨立，1918年建國後出任總統，並以布拉格城堡作為新共和國的政治中心。'},
-    {era:'1918–1945',name:'阿道夫·希特勒',years:'1889–1945',role:'納粹德國獨裁者',countries:'🇩🇪 德國|🇦🇹 奧地利|🇭🇺 匈牙利|🇸🇰 斯洛伐克|🇨🇿 捷克',mark:'希',desc:'1933年掌權後建立納粹政權，1938年併吞奧地利，翌年占領捷克地區，並發動第二次世界大戰與大屠殺。'},
-    {era:'1945–1989',name:'伊姆雷·納吉',years:'1896–1958',role:'匈牙利總理、1956年革命領袖',countries:'🇭🇺 匈牙利',mark:'納',desc:'1956年革命期間宣布政治改革並試圖退出華沙公約，蘇軍鎮壓後遭處決，後成為匈牙利民主化象徵。'},
-    {era:'1945–1989',name:'亞歷山大·杜布切克',years:'1921–1992',role:'捷克斯洛伐克改革派領袖',countries:'🇸🇰 斯洛伐克|🇨🇿 捷克',mark:'杜',desc:'1968年推動「帶有人性面孔的社會主義」，開啟布拉格之春；改革隨華沙公約軍隊入侵而終止。'},
-    {era:'1989–現在',name:'瓦茨拉夫·哈維爾',years:'1936–2011',role:'劇作家、捷克斯洛伐克總統',countries:'🇨🇿 捷克|🇸🇰 斯洛伐克',mark:'哈',desc:'長期參與異議運動，1989年天鵝絨革命後出任總統，帶領國家走出共產統治並轉向議會民主。'}
+    {era:'1526–1804',name:'拿破崙一世',years:'1769–1821',role:'法蘭西皇帝',countries:'🇩🇪 德國|🇦🇹 奧地利',mark:'拿',desc:'重組德意志地區並迫使法蘭茲二世於 1806 年放棄帝號，延續近九百年的神聖羅馬帝國至此終結。'},
+    {era:'1526–1804',name:'法蘭茲二世／一世',years:'1768–1835',role:'末代神聖羅馬皇帝、首任奧地利皇帝',countries:'🇦🇹 奧地利|🇩🇪 德國|🇭🇺 匈牙利|🇸🇰 斯洛伐克|🇨🇿 捷克',mark:'法',desc:'1804 年建立奧地利帝國，1806 年解散神聖羅馬帝國，親歷中歐由舊帝國轉向近代國家的關鍵交界。'},
+    {era:'1804–1918',name:'路德維希二世',years:'1845–1886',role:'巴伐利亞國王',countries:'🇩🇪 德國',mark:'路',desc:'以藝術贊助和夢幻城堡聞名，1869 年下令興建新天鵝堡；工程在他去世時仍未完成。'},
+    {era:'1804–1918',name:'法蘭茲·約瑟夫一世',years:'1830–1916',role:'奧地利皇帝、匈牙利國王',countries:'🇦🇹 奧地利|🇭🇺 匈牙利|🇸🇰 斯洛伐克|🇨🇿 捷克',mark:'約',desc:'統治近 68 年，1867 年建立奧匈雙元體制；維也納與布達佩斯今日許多代表性建築形成於其在位期間。'},
+    {era:'1804–1918',name:'伊麗莎白皇后',years:'1837–1898',role:'奧地利皇后、匈牙利王后',countries:'🇦🇹 奧地利|🇭🇺 匈牙利',mark:'茜',desc:'通稱茜茜，與匈牙利菁英關係密切，支持 1867 年奧匈妥協，至今仍是維也納宮廷文化的重要象徵。'},
+    {era:'1804–1918',name:'奧托·馮·俾斯麥',years:'1815–1898',role:'普魯士首相、德意志帝國首任宰相',countries:'🇩🇪 德國|🇦🇹 奧地利',mark:'俾',desc:'透過外交與三場統一戰爭促成 1871 年德意志帝國建立，重新改寫德語中歐的權力版圖。'},
+    {era:'1918–1945',name:'托馬斯·馬薩里克',years:'1850–1937',role:'捷克斯洛伐克首任總統',countries:'🇨🇿 捷克|🇸🇰 斯洛伐克',mark:'馬',desc:'一戰期間推動捷克斯洛伐克獨立，1918 年建國後出任總統，並以布拉格城堡作為新共和國的政治中心。'},
+    {era:'1918–1945',name:'阿道夫·希特勒',years:'1889–1945',role:'納粹德國獨裁者',countries:'🇩🇪 德國|🇦🇹 奧地利|🇭🇺 匈牙利|🇸🇰 斯洛伐克|🇨🇿 捷克',mark:'希',desc:'1933 年掌權後建立納粹政權，1938 年併吞奧地利，翌年占領捷克地區，並發動第二次世界大戰與大屠殺。'},
+    {era:'1945–1989',name:'伊姆雷·納吉',years:'1896–1958',role:'匈牙利總理、1956 年革命領袖',countries:'🇭🇺 匈牙利',mark:'納',desc:'1956 年革命期間宣布政治改革並試圖退出華沙公約，蘇軍鎮壓後遭處決，後成為匈牙利民主化象徵。'},
+    {era:'1945–1989',name:'亞歷山大·杜布切克',years:'1921–1992',role:'捷克斯洛伐克改革派領袖',countries:'🇸🇰 斯洛伐克|🇨🇿 捷克',mark:'杜',desc:'1968 年推動「帶有人性面孔的社會主義」，開啟布拉格之春；改革隨華沙公約軍隊入侵而終止。'},
+    {era:'1989–現在',name:'瓦茨拉夫·哈維爾',years:'1936–2011',role:'劇作家、捷克斯洛伐克總統',countries:'🇨🇿 捷克|🇸🇰 斯洛伐克',mark:'哈',desc:'長期參與異議運動，1989 年天鵝絨革命後出任總統，帶領國家走出共產統治並轉向議會民主。'}
   ];
 
   function renderPeople(){
@@ -696,9 +721,14 @@
     document.querySelectorAll('[data-countries]').forEach(function(card){
       var tags = document.createElement('div');
       tags.className = 'country-tags';
-      tags.innerHTML = card.getAttribute('data-countries').split('|').map(function(country){
+      var html = card.getAttribute('data-countries').split('|').map(function(country){
         return '<span class="country-tag">' + escapeHtml(country) + '</span>';
       }).join('');
+      var style = card.getAttribute('data-style');
+      if(style){
+        html = html + '<span class="style-tag">' + escapeHtml(style) + '</span>';
+      }
+      tags.innerHTML = html;
       var body = card.classList.contains('person-card') ? card.lastElementChild : card;
       body.appendChild(tags);
     });
